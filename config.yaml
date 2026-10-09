@@ -1,0 +1,43 @@
+corpus:
+  pdf_dir: data/raw_pdfs
+  chroma_path: data/chromadb
+  collection: raft_corpus
+  embed_model: nomic-embed-text
+  chunk_size: 1800
+  chunk_overlap: 200
+  doc_char_limit: 450
+  eval_split: 0.15
+qa:
+  backend: ollama
+  model: llama3.2:3b-instruct-q4_K_M
+  base_url: null
+  questions_per_chunk: 1
+  max_chunks: null
+dataset:
+  n_distractors: 3
+  p_golden: 0.85
+  p_unanswerable: 0.15
+  hard_negative_ratio: 0.5
+  seed: 42
+  domain_label: "the provided documents"
+model:
+  base_model: unsloth/Llama-3.2-3B-Instruct
+  max_seq_length: 1536
+  load_in_4bit: true
+  lora_r: 16
+  lora_alpha: 16
+  batch_size: 1
+  grad_accum: 4
+  lr: 2.0e-4
+  epochs: 1
+agent:
+  serve_model: raft-llama3.2
+  max_attempts: 3
+  k: 4
+  temperature: 0.0
+eval:
+  judge_backend: ollama
+  judge_model: llama3.2:3b-instruct-q4_K_M
+  judge_base_url: null
+  embed_model: nomic-embed-text
+  metrics: [faithfulness, answer_relevancy, context_precision, context_recall]

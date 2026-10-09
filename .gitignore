@@ -1,0 +1,40 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+
+# Vector Store & Heavy Data
+data/chromadb/
+data/raw_pdfs/*.pdf
+!data/raw_pdfs/.gitkeep
+
+# Generated pipeline artifacts
+data/*.json
+eval/
+
+# Logs & Environment
+.env
+logs/
+
+# Project specific
+plan.md
+week_*_guide.md
+
+# Fine-tuning artifacts & models
+models/
+outputs/
+.ollama/
+
+.triton_cache/
+.hf_cache/
+unsloth_compiled_cache/
+*.gguf
+*.safetensors
+
+# Tooling
+.claude/
+.pytest_cache/
+

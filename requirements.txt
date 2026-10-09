@@ -1,0 +1,25 @@
+# Ingest & retrieval
+langchain-community>=0.3.14
+langchain-chroma>=0.1.4
+langchain-ollama>=0.2.2
+langchain-openai>=0.2.14
+langchain-text-splitters>=0.3.0
+chromadb>=0.5.23
+pymupdf>=1.25.1
+pyyaml>=6.0.1
+
+# Fine-tuning
+unsloth
+transformers>=4.45.0
+datasets>=3.0.0
+trl>=0.12.0
+
+# Agent orchestration
+langgraph>=0.2.0
+
+# Evaluation
+tqdm>=4.67.1
+ragas==0.2.15
+
+# Testing
+pytest>=8.0.0
